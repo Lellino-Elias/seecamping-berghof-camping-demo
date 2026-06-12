@@ -1,325 +1,273 @@
 import type { CampsiteConfig } from "../types";
 
-/**
- * Seecamping Berghof — Ossiacher See Süduferstraße 241, A-9523 Villach/Landskron, Kärnten.
- * Alle Texte/Fakten belegt aus seecamping-berghof.at (Stand-Scrape 2026-06).
- * Bilder = ausschließlich eigene Berghof-Fotos in /public/campsites/seecamping-berghof/
- * (jedes Bild vor Verwendung per Vision geprüft).
- *
- * EHRLICH:
- * - Platz liegt GENUIN „direkt am Südufer des Ossiacher Sees" (10 ha Seegrundstück,
- *   800 m Seepromenade, zwei Badestrände) → see-Rahmung ist belegt.
- * - PREISE: Die Quelle nennt NIRGENDS Nächtigungspreise (Stell-/Mobilheim-/Ferienhauspreise
- *   liegen nur hinter nicht gescrapten „Mehr info"-Detailseiten). Einzig reale Preise auf der
- *   Seite: Pauschale „Schnuppertage" € 185 (3 Nächte / 2 Erw.) und eine externe Rafting-Aktivität
- *   (€ 72, giggle.tips). Die Nächtigungs-Kategorien im Buchungswidget sind daher als
- *   pricesArePlaceholder=true mit REALISTISCHEN Platzhalter-Richtpreisen gesetzt und offen
- *   ausgewiesen; die echte Schnuppertage-Pauschale steht als Highlight. Mit Kunden bestätigen.
- * - mobilheime[].priceFrom bewusst weggelassen (keine Quellpreise → nicht erfinden).
- * - awards: [] — die Seite zeigt zwar „Wir sind ausgezeichnet!" mit Partner-/Bewertungs-Logos
- *   (ADAC, camping.info, PiNCamp, ANWB …), nennt aber keine eindeutig benennbare Auszeichnung.
- * - Hunde: nur in der Nebensaison erlaubt, im Hochsommer (04.07.–30.08.) NICHT → ehrlich geframt.
- * - coords weggelassen (keine Koordinaten in der Quelle, kein Internet zum Geocoden).
- */
 const IMG = "/campsites/seecamping-berghof";
 
-export const seecampingBerghof: CampsiteConfig = {
+const seecampingBerghof: CampsiteConfig = {
   name: "Seecamping Berghof",
   shortName: "Berghof",
   slug: "seecamping-berghof",
-  ort: "Villach/Landskron am Ossiacher See",
+  ort: "Villach/Landskron",
   region: "Kärnten",
   brandKind: "Camping am Ossiacher See",
   see: "Ossiacher See",
-  regionLong: "Region Villach · Ossiacher See · Kärnten · Österreich",
+  regionLong: "Ossiacher See · Region Villach · Kärnten · Österreich",
 
-  claim: "Campingurlaub in Kärnten direkt am Ossiacher See",
-  claimEmphasis: "direkt am Ossiacher See",
+  heroVariant: "center",
+
+  claim: "Familiencamping direkt am Südufer des Ossiacher Sees",
+  claimEmphasis: "Ossiacher Sees",
+  emailDetail: "euer 800-Meter-Seeufer mit zwei eigenen Badestränden",
   intro:
-    "Eingebettet zwischen Gerlitzen Alpe und Ossiacher Tauern, direkt am sonnigen Südufer des Ossiacher Sees: ein Familienbetrieb mit 10 ha Seegrundstück, 800 m Seepromenade und zwei Badestränden — seit 70 Jahren persönlich geführt.",
+    "Zwischen Gerlitzen Alpe und Ossiacher Tauern liegt auf einem terrassierten Seegrundstück der Platz, den Familie Ertl seit 70 Jahren führt — direkt am sonnigen Südufer des glasklaren Ossiacher Sees.",
+
+  logo: { src: `${IMG}/logo.png`, alt: "Seecamping Berghof Logo" },
 
   statement: {
-    text: "Höchste Qualität, charmanter, persönlicher Service und eine entspannte Wohlfühlatmosphäre fernab von Stress und Trubel — und das seit 70 Jahren.",
-    emphasis: "seit 70 Jahren",
+    text: "Zehn Hektar Seegrundstück, 800 Meter Promenade, zwei Badestrände — und mittendrin dein Stellplatz.",
+    emphasis: "zwei Badestrände",
   },
 
   pillars: [
     {
       title: "Direkt am Südufer",
-      text: "Terrassenförmige Wiesen, schattenspendende Bäume und herrliche Ausblicke — direkt am glasklaren Ossiacher See, im Herzen von Kärnten.",
-      image: { src: `${IMG}/berghof-camping-direkt-am-see.webp`, alt: "Campingplatz direkt am Ufer des Ossiacher Sees mit Bergblick" },
+      text: "Großzügige Plätze am sonnigen Südufer des Ossiacher Sees — mit Seezugang, Promenade und Blick auf die Berge Kärntens.",
+      image: { src: `${IMG}/pillar-see.webp`, alt: "Stellplätze direkt am Ossiacher See beim Seecamping Berghof" },
     },
     {
-      title: "10 ha am See mit zwei Stränden",
-      text: "Ein 10 ha großes Seegrundstück mit 800 m Seepromenade und zwei Badestränden — der Ossiacher See wird im August bis zu 26 Grad warm.",
-      image: { src: `${IMG}/berghof-weststrand-badestrand.webp`, alt: "Badestrand mit Steg am Ossiacher See beim Seecamping Berghof" },
+      title: "Plätze mit Seeblick",
+      text: "Seeplätze in Strandnähe und Superiorplätze mit privater Hollywoodschaukel — Panoramablick über See und Bergwelt inklusive.",
+      image: { src: `${IMG}/pillar-seeblick.webp`, alt: "Seeplatz mit Hollywoodschaukel und Blick auf den Ossiacher See" },
     },
     {
-      title: "Ein Paradies für Familien",
-      text: "Kinderstrand, drei Spielplätze, Kinderanimation und ein großes Sportareal — hier wird es Klein und Groß nie langweilig.",
-      image: { src: `${IMG}/berghof-familie-am-see.webp`, alt: "Familien beim Kinderprogramm am Seeufer in der Abendsonne" },
+      title: "Mehr als nur Stellplatz",
+      text: "Im Obstgarten steht das Feriendorf: urige Holzhäuser aus Lärchenholz und gemütliche Mobilheime — ganzjährig buchbar, auch im Winter.",
+      image: { src: `${IMG}/pillar-feriendorf.webp`, alt: "Feriendorf aus Holzhäusern am Ossiacher See — Luftaufnahme" },
     },
   ],
 
   usps: [
-    "Direkt am Südufer des Ossiacher Sees",
-    "10 ha Seegrundstück, zwei Badestrände",
-    "Familienbetrieb seit 70 Jahren",
-    "Kostenloses WLAN auf allen Stellplätzen",
-    "Restaurant, Supermarkt & Strandpavillon am Platz",
-    "Kinderstrand, 3 Spielplätze & Animation",
+    "Direkt am Ossiacher See",
+    "800 m Seepromenade",
+    "Zwei Badestrände",
+    "Seit 70 Jahren Familie Ertl",
+    "Kostenloses WLAN",
+    "Restaurant & Supermarkt",
   ],
 
   trust: {
-    heading: "Worauf Sie sich am Berghof verlassen können",
-    headingEmphasis: "verlassen",
+    heading: "Darauf ist am Berghof seit 70 Jahren Verlass",
+    headingEmphasis: "seit 70 Jahren",
     intro:
-      "Persönlich geführt von der Familie Ertl, seit 70 Jahren am Südufer des Ossiacher Sees zuhause: gepflegte Anlage, aufmerksamer Service und ein sehr gutes Preis-Leistungs-Verhältnis — von vielen Gästen weiterempfohlen.",
+      "Ein Familienbetrieb am Südufer des Ossiacher Sees: terrassierte Wiesen mit Seeblick, fünf moderne Sanitärgebäude, eigenes Restaurant und Supermarkt — gepflegt, persönlich und mitten in der Natur Kärntens.",
   },
 
-  // Keine eindeutig benennbare Auszeichnung auf der Quelle → ehrlich leer (Band zeigt nur USP-Pills).
   awards: [],
 
-  saison: { von: "April", bis: "November" },
+  saison: { von: "17. April", bis: "2. November" },
 
   hero: {
-    aerial: { src: `${IMG}/berghof-aerial-see.webp`, alt: "Luftaufnahme: Seecamping Berghof mit Ferienhäusern und Stellplätzen am Ossiacher See" },
-    sunset: { src: `${IMG}/berghof-sonnenuntergang-see.webp`, alt: "Sonnenuntergang über dem Ossiacher See mit den Bergen Kärntens" },
+    aerial: { src: `${IMG}/hero-aerial.webp`, alt: "Seecamping Berghof am sonnigen Südufer des Ossiacher Sees" },
+    sunset: { src: `${IMG}/hero-sunset.webp`, alt: "Sonnenaufgang über dem Ossiacher See" },
+  },
+
+  breather: {
+    image: { src: `${IMG}/breather-abend.webp`, alt: "Abendlicht über den Stellplätzen am Schilfufer des Ossiacher Sees" },
+    line: "Abendlicht über dem Schilf — der See wird ganz still.",
   },
 
   camping: {
-    heading: "Camping am Südufer des Ossiacher Sees",
+    heading: "Camping am Südufer",
     intro:
-      "Erstklassiger Campingurlaub auf terrassenförmig angelegtem Areal: großzügige, parzellierte Plätze mit Stromanschluss, größtenteils mit Panoramablick über den See und die Bergwelt Kärntens.",
+      "Terrassierte Wiesen, schattenspendende Bäume und kurze Wege zum Wasser — vom Zeltplatz bis zum Superiorplatz mit Seeblick findest du hier deinen Platz.",
     features: [
       {
-        title: "Terrassenlage mit Panoramablick",
-        text: "Terrassenförmige Wiesen mit schattenspendenden Bäumen und Blick über den Ossiacher See — eingebettet zwischen Gerlitzen Alpe und Ossiacher Tauern.",
-        image: { src: `${IMG}/berghof-camping-terrassen.webp`, alt: "Terrassenförmige Stellplätze des Seecamping Berghof am Ossiacher See" },
+        title: "Terrassierte Stellplätze",
+        text: "Parzellierte Plätze auf terrassenförmig angelegten Wiesen — von 60 bis 155 m², alle mit Stromanschluss und befestigtem Untergrund.",
+        image: { src: `${IMG}/camping-terrassen.webp`, alt: "Terrassierte Stellplätze am Seecamping Berghof" },
       },
       {
-        title: "Stellplätze für jeden Geschmack",
-        text: "Von Zelt- über Standard- und Komfortplätze bis zum Seeplatz: alle parzelliert, mit Stromanschluss (CEE) und befestigtem Untergrund aus Rasen und/oder Kies.",
-        image: { src: `${IMG}/berghof-stellplaetze.webp`, alt: "Parzellierte Stellplätze mit Zelten und Wohnwagen am Seecamping Berghof" },
+        title: "Ruhige Zeltterrassen",
+        text: "Reine Wiesenplätze für Zelte und Faltcaravans, in Terrassen über dem See situiert — geschützt zwischen Bäumen gelegen.",
+        image: { src: `${IMG}/camping-zelte.webp`, alt: "Zeltterrassen auf der Wiese am Seecamping Berghof" },
       },
       {
-        title: "Seeplätze direkt am Wasser",
-        text: "Plätze direkt am See, in Strandnähe oder mit Seeblick — für Wohnwagen und Wohnmobile, mitten im Geschehen am Ufer.",
-        image: { src: `${IMG}/berghof-seeplaetze.webp`, alt: "Seeplätze direkt am Ufer des Ossiacher Sees" },
+        title: "Fünf moderne Sanitärgebäude",
+        text: "Top ausgestattete Dusch- und WC-Anlagen, Kinder- und Babywaschräume sowie private Mietbäder — von jedem Stellplatz bequem erreichbar.",
+        image: { src: `${IMG}/camping-sanitaer.webp`, alt: "Modernes Sanitärgebäude mit Schieferwänden am Seecamping Berghof" },
       },
       {
-        title: "Superiorplätze 130–155 m²",
-        text: "Großzügige Plätze mit 16-Ampere-Anschluss, SAT- sowie Frisch- und Abwasseranschluss — Highlight: eine private Hollywoodschaukel aus Holz.",
-        image: { src: `${IMG}/berghof-superiorplatz.webp`, alt: "Superiorplatz mit privater Hollywoodschaukel am See" },
+        title: "Restaurant mit Terrasse",
+        text: "Im Landgasthaus Berghof gibt es Kärntner Kasnudeln, Rippchen und mehr — mit großer Terrasse, dazu einmal pro Woche eine Weinverkostung.",
+        image: { src: `${IMG}/camping-restaurant.webp`, alt: "Landgasthaus Berghof am Campingplatz" },
       },
       {
-        title: "Moderne Sanitäranlagen",
-        text: "Fünf moderne Sanitärgebäude mit Kinder- und Babywaschräumen, privaten Mietbädern (gegen Aufpreis) sowie Waschmaschinen und Trocknern.",
-        image: { src: `${IMG}/berghof-sanitaeranlage.webp`, alt: "Moderne Sanitäranlage mit Natursteinwand am Seecamping Berghof" },
+        title: "Platzeigener Supermarkt",
+        text: "Frische Zutaten für den selbst gekochten Urlaubsschmaus gibt es direkt am Platz — täglich geöffnet, kurze Wege inklusive.",
+        image: { src: `${IMG}/camping-supermarkt.webp`, alt: "Platzeigener Supermarkt am Seecamping Berghof" },
       },
       {
-        title: "Zelt-Terrassen in der Natur",
-        text: "Reine Wiesenplätze für Zelte und Faltcaravans, in Terrassen situiert — umgeben von Wiesen, Wald und Bergen. WLAN ist auf allen Stellplätzen kostenlos.",
-        image: { src: `${IMG}/berghof-zeltterrassen.webp`, alt: "Zeltplätze auf grünen Terrassen am Seecamping Berghof" },
+        title: "Seeplätze am Ufer",
+        text: "Plätze direkt am See, in Strandnähe oder mit Seeblick — morgens zuerst der Blick übers Wasser, dann ein paar Schritte zum Baden.",
+        image: { src: `${IMG}/camping-seeplatz.webp`, alt: "Seeplatz am Schilfufer des Ossiacher Sees" },
       },
     ],
   },
 
   mobilheime: {
-    heading: "Ferienhäuser & Mobilheime",
+    heading: "Mobilheime & Ferienhäuser",
     intro:
-      "Lieber feste Wände als Zelt? Urige Ferienhäuser aus rund 200 Jahre altem Lärchenholz mit Privatsauna und neue, klimatisierte Mobilheime — beide das ganze Jahr über buchbar, auch im Winter.",
+      "Campingfeeling ohne eigenes Zelt: kompakte Mobilheime und urige Ferienhäuser aus Lärchenholz im Obstgarten — beide auch in den Wintermonaten buchbar.",
     items: [
       {
+        name: "Mobilheim",
+        kind: "bis 5 Personen · rund 40 m²",
+        text: "Sieben heimelige Holzhäuschen auf der Mobilheimterrasse: zwei Schlafzimmer, voll ausgestattete Küche, eigene überdachte Terrasse — eine Kategorie sogar mit Seeblick.",
+        image: { src: `${IMG}/mobilheim-aussen.webp`, alt: "Mobilheim mit überdachter Terrasse am Seecamping Berghof" },
+        features: ["2 getrennte Schlafzimmer", "Voll ausgestattete Küche", "Klimaanlage & Zentralheizung", "Überdachte Terrasse"],
+      },
+      {
         name: "Ferienhaus Premium",
-        kind: "Ferienhaus · bis 6 Personen",
-        text: "70 m² aus Lärchenholz: zwei Schlafzimmer, zwei Badezimmer, Holzofen und eine eigene Privatsauna mit Blick auf den Ossiacher See.",
-        image: { src: `${IMG}/berghof-ferienhaus-premium.webp`, alt: "Ferienhaus Premium aus Lärchenholz am Seecamping Berghof" },
-        features: ["70 m²", "2 Schlafzimmer · 2 Bäder", "eigene Sauna"],
+        kind: "70 m² · 2 Schlafzimmer · Sauna",
+        text: "Neue Häuser aus rund 200 Jahre altem Lärchenholz — mit gusseisernem Holzofen im Wohnbereich und einer Privatsauna mit Blick auf den Ossiacher See.",
+        image: { src: `${IMG}/ferienhaus-aussen.webp`, alt: "Ferienhaus aus Lärchenholz am Seecamping Berghof" },
+        features: ["Privatsauna mit Seeblick", "2 Badezimmer", "Gusseiserner Holzofen", "Überdachte Terrasse"],
       },
       {
         name: "Ferienhaus Deluxe",
-        kind: "Ferienhaus · bis 8 Personen",
-        text: "90 m² für die große Familie: drei Schlafzimmer, zwei Badezimmer, Privatsauna und überdachte Terrasse mit Sitzecke im Obstgarten.",
-        image: { src: `${IMG}/berghof-ferienhaus-deluxe.webp`, alt: "Geräumiges Ferienhaus Deluxe mit Balkon und Terrasse" },
-        features: ["90 m²", "3 Schlafzimmer · 2 Bäder", "eigene Sauna"],
-      },
-      {
-        name: "Mobilheim Kat. A",
-        kind: "Mobilheim · bis 5 Personen",
-        text: "40 m² mit zwei getrennten Schlafzimmern, großem Wohn-Essbereich mit SAT-TV, voll eingerichteter Küche, Zentralheizung und Klimaanlage.",
-        image: { src: `${IMG}/berghof-mobilheim-wohnbereich.webp`, alt: "Moderner Wohn- und Essbereich im Mobilheim am Seecamping Berghof" },
-        features: ["40 m²", "2 Schlafzimmer", "Klimaanlage"],
-      },
-      {
-        name: "Mobilheim Kat. B – Seeblick",
-        kind: "Mobilheim · 40 m²",
-        text: "Mobilheim mit Seeblick: voll ausgestattete Küche mit Geschirrspüler und Nespresso, eigenes Bad, überdachte Terrasse und kleiner Grünbereich.",
-        image: { src: `${IMG}/berghof-mobilheim-kueche.webp`, alt: "Voll eingerichtete Küche im Mobilheim am Seecamping Berghof" },
-        features: ["40 m²", "2 Schlafzimmer", "Seeblick"],
+        kind: "90 m² · 3 Schlafzimmer · bis 6 Personen",
+        text: "Das große Lärchenholzhaus mit drei Schlafzimmern, zwei Bädern und eigener Sauna — Platz für die ganze Familie, mit Balkon und überdachter Terrasse.",
+        image: { src: `${IMG}/ferienhaus-deluxe.webp`, alt: "Ferienhaus Deluxe mit Balkon und Terrasse am Seecamping Berghof" },
+        features: ["3 Schlafzimmer", "Private Sauna", "2 Badezimmer", "Balkon & Terrasse"],
       },
     ],
   },
 
   kinder: {
-    heading: "Ferien für die ganze Familie",
+    heading: "Ein Paradies für Familien",
     intro:
-      "Eigener Kinderstrand mit Wasserrutsche, drei Spielplätze, ein Indoorkletterbereich und Kinderanimation im Kinderland — während Mama und Papa am See entspannen.",
+      "Drei Außen- und ein Indoor-Spielplatz, ein eigenes Animationsteam und ganz viel Platz zum Draußensein — bei freiem Programm langweilt sich hier kein Kind.",
     features: [
       {
-        title: "Kinderland & Animation",
-        text: "In den Ferienzeiten hat das Kinderland sechs Tage die Woche geöffnet: Kinderdisco, Kasperltheater, Zaubershow, Floßbau und Ponyreiten warten auf die Kleinen.",
-        image: { src: `${IMG}/berghof-ponyreiten.webp`, alt: "Kinder beim Ponyreiten am Seecamping Berghof" },
+        title: "Ponyreiten",
+        text: "Beim Freizeitprogramm geht es im Sommer immer wieder aufs Pony — gemächlich übers Gelände, gleich neben dem Spielplatz.",
+        image: { src: `${IMG}/kids-pony.webp`, alt: "Ponyreiten für Kinder am Seecamping Berghof" },
       },
       {
-        title: "Drei Spielplätze",
-        text: "Drei Kinderspielplätze auf dem ganzen Gelände, zwei davon direkt an den Badestränden — die Kinder immer in Sichtweite.",
-        image: { src: `${IMG}/berghof-spielplatz.webp`, alt: "Spielplatz mit Rutsche und Spielturm am Seecamping Berghof" },
+        title: "Floßbau am See",
+        text: "Selbst ein Floß bauen und damit auf den Ossiacher See hinauspaddeln — ein Klassiker aus dem Berghof-Freizeitprogramm.",
+        image: { src: `${IMG}/kids-floss.webp`, alt: "Kinder beim Floßbau am Ossiacher See" },
       },
       {
-        title: "Indoorkletterbereich",
-        text: "Auch für Schlechtwettertage gerüstet: ein Indoorkletterbereich sowie ein Jugendraum mit Tischtennis, Billard und Tischfußball.",
-        image: { src: `${IMG}/berghof-indoor-spielbereich.webp`, alt: "Indoor-Kletterbereich am Seecamping Berghof" },
+        title: "Eigenes Kinderbad",
+        text: "Liebevoll gestaltete Kinder- und Babywaschräume mit Apfelbaum-Waschbecken — Sauberwerden wird hier fast zum Spiel.",
+        image: { src: `${IMG}/kids-kinderbad.webp`, alt: "Kinderbad mit Apfelbaum-Waschbecken am Seecamping Berghof" },
       },
     ],
   },
 
   aktivitaeten: {
-    heading: "Aktiv am See & in den Bergen",
+    heading: "See, Berge & die Region Villach",
     intro:
-      "Glasklares Badewasser, jede Menge Wassersport und ein 5 ha großes Sportareal direkt am Platz — und ringsum die Berge und Ausflugsziele der Region Villach.",
+      "Baden, Radfahren, Wandern, Bergbahn fahren — der Ossiacher See liegt direkt vor dem Vorzelt, und ringsum wartet die Vielfalt der Region Villach.",
     items: [
       {
-        title: "Baden & Wasserspaß",
-        text: "Eigener Kinderstrand mit Wasserrutsche, Sandstrand und seichter Uferbereich am glasklaren Ossiacher See — Badewasser in Trinkwasserqualität.",
-        image: { src: `${IMG}/berghof-baden-wasserspass.webp`, alt: "Kinder beim Baden im Ossiacher See" },
+        title: "Baden & Strandpavillon",
+        text: "Zwei Badestrände, ein Strandkiosk und der Strandpavillon am Weststrand — der Sprung ins glasklare Wasser ist nur ein paar Schritte entfernt.",
+        image: { src: `${IMG}/aktiv-strandpavillon.webp`, alt: "Strandpavillon am Weststrand des Ossiacher Sees" },
       },
       {
-        title: "Wassersport & Motorboot",
-        text: "Vom Wasserski übers Bananefahren bis zum Wassertrampolin — am Ossiacher See ist für Action auf dem Wasser gesorgt.",
-        image: { src: `${IMG}/berghof-motorboot-wassersport.webp`, alt: "Motorboot mit Bananefahrt am Ossiacher See" },
+        title: "Radfahren & Mountainbiken",
+        text: "Rund um den See führen Rad- und Mountainbike-Wege wie der Alban-Berg-Trail — Räder können direkt am Platz gemietet werden.",
+        image: { src: `${IMG}/aktiv-mtb.webp`, alt: "Mountainbiken auf einem Trail über dem Ossiacher See" },
       },
       {
-        title: "Sportareal & Beachvolleyball",
-        text: "Ein 5 ha großes Sportareal mit Beachvolleyball- und Fußballplatz, Adventure-Minigolf und dem Lake.Bike Family Play- and Bike Park.",
-        image: { src: `${IMG}/berghof-beachvolleyball.webp`, alt: "Beachvolleyballplätze am Seecamping Berghof" },
+        title: "Auf die Gerlitzen Alpe",
+        text: "Mit der Kanzelbahn hinauf auf die Gerlitzen Alpe — oben weiter Blick über den Ossiacher See bis weit nach Kärnten hinein.",
+        image: { src: `${IMG}/aktiv-gerlitzen.webp`, alt: "Kanzelbahn auf die Gerlitzen Alpe über dem Ossiacher See" },
       },
       {
-        title: "Adventure-Minigolf",
-        text: "Auf der Adventure-Minigolf-Anlage wird über Steine, Kurven und Hindernisse geputtet — ein Spaß für die ganze Familie.",
-        image: { src: `${IMG}/berghof-adventure-minigolf.webp`, alt: "Adventure-Minigolf-Anlage am Seecamping Berghof" },
+        title: "Natur am Bleistätter Moor",
+        text: "Spazier- und Wanderwege führen zu magischen Orten wie dem Bleistätter Moor mit seinem Aussichtsturm — Ruhe und Naturkino inklusive.",
+        image: { src: `${IMG}/aktiv-moor.webp`, alt: "Aussichtsturm am Bleistätter Moor bei Villach" },
       },
       {
-        title: "Ossiacher See Schifffahrt",
-        text: "Der Anlegesteg liegt direkt beim Campingplatz: Leinen los für eine heitere Bootsfahrt über den glasklaren Ossiacher See.",
-        image: { src: `${IMG}/berghof-schifffahrt.webp`, alt: "Ausflugsschiff auf dem Ossiacher See" },
+        title: "Gipfel & Aussicht",
+        text: "Die Bergwelt rund um Villach lädt zu Touren ein — vom Hausberg Dobratsch bis zu stillen Abendstimmungen über den Gipfeln.",
+        image: { src: `${IMG}/aktiv-dobratsch.webp`, alt: "Abendstimmung am Dobratsch bei Villach" },
       },
       {
-        title: "Berge & Gerlitzen Alpe",
-        text: "Wandern, Radfahren und Mountainbiken rund um den See — die Gerlitzen Alpe und die Ossiacher Tauern liegen direkt vor der Tür.",
-        image: { src: `${IMG}/berghof-gerlitzen-bergbahn.webp`, alt: "Bergbahn an der Gerlitzen Alpe über dem Ossiacher See" },
+        title: "Kärntner Kulinarik",
+        text: "Eine zünftige Brettljause, regionale Spezialitäten und Weine aus dem Alpen-Adria-Raum — die Region schmeckt man bei jedem Bissen.",
+        image: { src: `${IMG}/aktiv-brettljause.webp`, alt: "Kärntner Brettljause in der Region Villach" },
       },
     ],
   },
 
   anreise: {
-    heading: "So finden Sie uns",
+    heading: "Dein Weg an den Ossiacher See",
     modes: [
-      { title: "Mit dem Auto", text: "Über die A2 Süd Autobahn bis Villach, weiter Richtung Ossiacher See / Landskron zur Ossiacher See Süduferstraße 241." },
-      { title: "Mit dem Flugzeug", text: "Der Flughafen Klagenfurt (KLU) liegt in der Nähe von Villach; von dort weiter mit Mietwagen oder Transfer." },
-      { title: "Mit Bahn & Bus", text: "Bahnhof Villach Hauptbahnhof, weiter mit Bus oder Taxi zum Südufer des Ossiacher Sees." },
+      { title: "Mit dem Auto", text: "Über die A10 Tauern Autobahn bis Villach, dann der Ossiacher See Süduferstraße bis Hausnummer 241 in Landskron folgen — beschildert." },
+      { title: "Mit der Bahn", text: "Hauptbahnhof Villach, rund 10 Minuten mit Bus oder Taxi ans Südufer des Ossiacher Sees." },
+      { title: "Mit dem Flugzeug", text: "Flughafen Klagenfurt am Wörthersee in etwa 30 Fahrminuten — ideal für die Anreise aus der Ferne." },
     ],
   },
 
   galerie: {
-    heading: "Ferien am Ossiacher See",
+    heading: "Sommer am Ossiacher See",
     headingEmphasis: "Ossiacher See",
-    intro:
-      "Stimmungsvolle Stunden am Wasser, frische Köstlichkeiten und ein Sonnenuntergang über dem See — ein paar Eindrücke vom Seecamping Berghof.",
+    intro: "Seeluft, terrassierte Wiesen und lange Abende am Wasser — ein paar Eindrücke vom Seecamping Berghof.",
     tag: "April bis November",
     images: [
-      { src: `${IMG}/berghof-stimmung-am-see.webp`, alt: "Abendstimmung am Ossiacher See beim Seecamping Berghof" },
-      { src: `${IMG}/berghof-restaurant-terrasse.webp`, alt: "Sonnenterrasse des Landgasthaus Berghof" },
-      { src: `${IMG}/berghof-supermarkt.webp`, alt: "Frische Obst- und Gemüseauswahl im Supermarkt am Campingplatz" },
-      { src: `${IMG}/berghof-strandpavillon.webp`, alt: "Strandpavillon direkt am Ossiacher See" },
+      { src: `${IMG}/galerie-seeufer.webp`, alt: "Stellplatz direkt am Ufer des Ossiacher Sees" },
+      { src: `${IMG}/galerie-wiese.webp`, alt: "Wohnmobile auf der sonnigen Wiese am Seecamping Berghof" },
+      { src: `${IMG}/galerie-abend.webp`, alt: "Zelte im Abendlicht am Ossiacher See" },
+      { src: `${IMG}/galerie-steg.webp`, alt: "Pause am Steg mit Blick über den Ossiacher See" },
     ],
   },
 
   booking: {
-    heading: "Verfügbarkeit & Anfrage",
-    intro:
-      "Wählen Sie Zeitraum, Unterkunft und Personen — das Berghof-Team meldet sich mit Ihrer persönlichen Verfügbarkeit und den aktuellen Tagespreisen.",
-    pricesArePlaceholder: true,
+    heading: "Sicher dir deinen Sommer am Ossiacher See",
+    headingEmphasis: "am Ossiacher See",
+    intro: "Wähle Zeitraum und Kategorie — Familie Ertl meldet sich persönlich mit deiner Verfügbarkeit und dem passenden Angebot.",
+    pricesArePlaceholder: false,
     priceNote:
-      "Richtpreise — die Website nennt keine Nächtigungspreise; diese Werte sind realistische Platzhalter (bitte bestätigen). Reales Angebot: Schnuppertage € 185 für 3 Nächte / 2 Erwachsene.",
+      "Schnuppertage ab € 185 für 3 Nächte & 2 Personen (inkl. Strom, Seerundfahrt mit der MS Ossiach & Zwei-Gang-Menü). Stell- und Hauspreise auf Anfrage. Zzgl. Ortstaxe € 2,70 p. P. (Juni/Juli/Sept.) bzw. € 2,20 (April/Mai/Okt./Nov.) und Umweltabgabe € 5,10 pro Stellplatz.",
     highlight: {
       title: "Schnuppertage ab € 185",
-      text: "3 Nächte für 2 Erwachsene ab € 185,– — das Kennenlern-Angebot vom Berghof. Aktuelle Tagespreise gerne auf Anfrage.",
+      text: "3 Nächte für 2 Personen inklusive Strom, einer Seerundfahrt mit der MS Ossiach und einem Zwei-Gang-Menü im Landgasthaus.",
     },
     categories: [
-      // PLATZHALTER — keine Nächtigungspreise in der Quelle. Realistische Kärntner Richtwerte, mit Kunde bestätigen.
-      { id: "stellplatz", label: "Stellplatz", perNight: 39, perExtraGuest: 10 },
-      { id: "mobilheim", label: "Mobilheim", perNight: 119, perExtraGuest: 0 },
-      { id: "ferienhaus", label: "Ferienhaus", perNight: 169, perExtraGuest: 0 },
+      { id: "zeltplatz", label: "Zeltplatz" },
+      { id: "standardplatz", label: "Standard- / Komfortplatz" },
+      { id: "seeplatz", label: "Seeplatz" },
+      { id: "superiorplatz", label: "Superiorplatz" },
+      { id: "mobilheim", label: "Mobilheim" },
+      { id: "ferienhaus", label: "Ferienhaus" },
     ],
   },
 
   kontakt: {
-    coords: { lat: 46.636001, lng: 13.900532 },
+    coords: { lat: 46.653752, lng: 13.932682 },
     tel: "+43 4242 41133",
     telHref: "tel:+43424241133",
     mail: "office@seecamping-berghof.at",
-    adresse: "Ossiacher See Süduferstraße 241 · A-9523 Villach/Landskron · Kärnten",
+    adresse: "Ossiacher See Süduferstraße 241 · 9523 Villach/Landskron · Kärnten",
   },
 
-  languages: ["DE"],
+  languages: ["DE", "EN", "NL"],
 
   nav: [
-    {
-      label: "Unterkünfte",
-      href: "#mobilheime",
-      children: [
-        { label: "Ferienhäuser", href: "#mobilheime" },
-        { label: "Mobilheime", href: "#mobilheime" },
-        { label: "Stellplätze", href: "#camping" },
-      ],
-    },
-    {
-      label: "Camping",
-      href: "#camping",
-      children: [
-        { label: "Stellplatz-Kategorien", href: "#camping" },
-        { label: "Seeplätze", href: "#camping" },
-        { label: "Sanitäranlagen", href: "#camping" },
-      ],
-    },
-    {
-      label: "Familie",
-      href: "#kinder",
-      children: [
-        { label: "Kinderland & Animation", href: "#kinder" },
-        { label: "Spielplätze", href: "#kinder" },
-        { label: "Indoorbereich", href: "#kinder" },
-      ],
-    },
-    {
-      label: "Aktiv & See",
-      href: "#aktivitaeten",
-      children: [
-        { label: "Baden & Wassersport", href: "#aktivitaeten" },
-        { label: "Sportareal", href: "#aktivitaeten" },
-        { label: "Ausflüge", href: "#aktivitaeten" },
-      ],
-    },
-    {
-      label: "Preise & Lage",
-      href: "#booking",
-      children: [
-        { label: "Anfrage", href: "#booking" },
-        { label: "Anreise", href: "#anreise" },
-        { label: "Kontakt", href: "#anreise" },
-      ],
-    },
+    { label: "Camping", href: "#camping", children: [
+      { label: "Stellplätze", href: "#camping" },
+      { label: "Sanitär", href: "#camping" },
+    ]},
+    { label: "Unterkünfte", href: "#mobilheime" },
+    { label: "Familie", href: "#kinder" },
+    { label: "Aktiv", href: "#aktivitaeten" },
+    { label: "Preise & Lage", href: "#booking", children: [
+      { label: "Preise", href: "#booking" },
+      { label: "Anreise", href: "#anreise" },
+    ]},
   ],
 };
 
