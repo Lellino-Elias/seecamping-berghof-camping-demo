@@ -40,7 +40,7 @@ const seecampingBerghof: CampsiteConfig = {
     },
     {
       title: "Mehr als nur Stellplatz",
-      text: "Im Obstgarten steht das Feriendorf: urige Holzhäuser aus Lärchenholz und gemütliche Mobilheime — ganzjährig buchbar, auch im Winter.",
+      text: "Urige Holzhäuser aus Lärchenholz und heimelige Mobilheime im Obstgarten — ganzjährig buchbar, auch im Winter.",
       image: { src: `${IMG}/pillar-feriendorf.webp`, alt: "Feriendorf aus Holzhäusern am Ossiacher See — Luftaufnahme" },
     },
   ],
@@ -92,12 +92,12 @@ const seecampingBerghof: CampsiteConfig = {
       },
       {
         title: "Fünf moderne Sanitärgebäude",
-        text: "Top ausgestattete Dusch- und WC-Anlagen, Kinder- und Babywaschräume sowie private Mietbäder — von jedem Stellplatz bequem erreichbar.",
+        text: "Dusch- und WC-Anlagen, Kinder- und Babywaschräume sowie private Mietbäder — von jedem Stellplatz bequem erreichbar.",
         image: { src: `${IMG}/camping-sanitaer.webp`, alt: "Modernes Sanitärgebäude mit Schieferwänden am Seecamping Berghof" },
       },
       {
         title: "Restaurant mit Terrasse",
-        text: "Im Landgasthaus Berghof gibt es Kärntner Kasnudeln, Rippchen und mehr — mit großer Terrasse, dazu einmal pro Woche eine Weinverkostung.",
+        text: "Im Landgasthaus Berghof warten Kärntner Kasnudeln und mehr — mit großer Terrasse und wöchentlicher Weinverkostung.",
         image: { src: `${IMG}/camping-restaurant.webp`, alt: "Landgasthaus Berghof am Campingplatz" },
       },
       {
@@ -121,21 +121,21 @@ const seecampingBerghof: CampsiteConfig = {
       {
         name: "Mobilheim",
         kind: "bis 5 Personen · rund 40 m²",
-        text: "Sieben heimelige Holzhäuschen auf der Mobilheimterrasse: zwei Schlafzimmer, voll ausgestattete Küche, eigene überdachte Terrasse — eine Kategorie sogar mit Seeblick.",
+        text: "Sieben Holzhäuschen mit zwei Schlafzimmern, voll ausgestatteter Küche und eigener Terrasse — eine Kategorie mit Seeblick.",
         image: { src: `${IMG}/mobilheim-aussen.webp`, alt: "Mobilheim mit überdachter Terrasse am Seecamping Berghof" },
         features: ["2 getrennte Schlafzimmer", "Voll ausgestattete Küche", "Klimaanlage & Zentralheizung", "Überdachte Terrasse"],
       },
       {
         name: "Ferienhaus Premium",
         kind: "70 m² · 2 Schlafzimmer · Sauna",
-        text: "Neue Häuser aus rund 200 Jahre altem Lärchenholz — mit gusseisernem Holzofen im Wohnbereich und einer Privatsauna mit Blick auf den Ossiacher See.",
+        text: "Häuser aus altem Lärchenholz mit gusseisernem Holzofen und Privatsauna — eine Kategorie mit Blick auf den Ossiacher See.",
         image: { src: `${IMG}/ferienhaus-aussen.webp`, alt: "Ferienhaus aus Lärchenholz am Seecamping Berghof" },
         features: ["Privatsauna mit Seeblick", "2 Badezimmer", "Gusseiserner Holzofen", "Überdachte Terrasse"],
       },
       {
         name: "Ferienhaus Deluxe",
         kind: "90 m² · 3 Schlafzimmer · bis 6 Personen",
-        text: "Das große Lärchenholzhaus mit drei Schlafzimmern, zwei Bädern und eigener Sauna — Platz für die ganze Familie, mit Balkon und überdachter Terrasse.",
+        text: "Das große Lärchenholzhaus mit drei Schlafzimmern, zwei Bädern und eigener Sauna — mit Balkon und überdachter Terrasse.",
         image: { src: `${IMG}/ferienhaus-deluxe.webp`, alt: "Ferienhaus Deluxe mit Balkon und Terrasse am Seecamping Berghof" },
         features: ["3 Schlafzimmer", "Private Sauna", "2 Badezimmer", "Balkon & Terrasse"],
       },
@@ -172,7 +172,7 @@ const seecampingBerghof: CampsiteConfig = {
     items: [
       {
         title: "Baden & Strandpavillon",
-        text: "Zwei Badestrände, ein Strandkiosk und der Strandpavillon am Weststrand — der Sprung ins glasklare Wasser ist nur ein paar Schritte entfernt.",
+        text: "Zwei Badestrände und ein Strandpavillon am Weststrand — der Sprung ins glasklare Wasser ist nur wenige Schritte entfernt.",
         image: { src: `${IMG}/aktiv-strandpavillon.webp`, alt: "Strandpavillon am Weststrand des Ossiacher Sees" },
       },
       {
@@ -187,7 +187,7 @@ const seecampingBerghof: CampsiteConfig = {
       },
       {
         title: "Natur am Bleistätter Moor",
-        text: "Spazier- und Wanderwege führen zu magischen Orten wie dem Bleistätter Moor mit seinem Aussichtsturm — Ruhe und Naturkino inklusive.",
+        text: "Spazier- und Wanderwege führen u.a. zum Bleistätter Moor mit Aussichtsturm — Ruhe und Naturkino inklusive.",
         image: { src: `${IMG}/aktiv-moor.webp`, alt: "Aussichtsturm am Bleistätter Moor bei Villach" },
       },
       {
